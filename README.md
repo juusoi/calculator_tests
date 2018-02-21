@@ -1,2 +1,2 @@
-# calulator_tests
-rf tests for a calculator
+# Calculator Tests
+A robot framework test suite to test a webcalculator
