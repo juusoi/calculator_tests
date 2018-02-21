@@ -15,3 +15,11 @@ This is the first set of regression tests.
     * Division 14 : 2 = 7
     
    More tests can be easily added.
+   
+## Possible next steps
+  * Data driven tests with random inputs 
+  * More complex tests with multiple operations
+  * More operations
+  * Checks for layout
+  * Other browsers and resolutions
+  * Mobile browsers and devices

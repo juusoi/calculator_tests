@@ -2,6 +2,7 @@
 Documentation     Tests to verify simple calculations with Web 2.0 Calculator
 Test Setup        Open calulator and clear
 Test Teardown     Close all browsers
+Default Tags      regression
 Library           Selenium2Library
 Library           calclib.py
 
@@ -14,21 +15,20 @@ ${BROWSER}        ff
 
 *** Test Cases ***
 Addition
-    [Tags]    regression
     Calculate 1 plus 5
-    and Verify that answer is 6
+    and Verify that the answer is 6
 
 Subtraction
     Calculate 20 minus 7
-    and Verify that answer is 13
+    and Verify that the answer is 13
 
 Multiplication
     Calculate 3 times 5
-    and Verify that answer is 15
+    and Verify that the answer is 15
 
 Division
     Calculate 14 divided_by 2
-    and Verify that answer is 7
+    and Verify that the answer is 7
 
 *** Keywords ***
 Open calulator and clear
@@ -45,7 +45,7 @@ Calculate ${value1} ${operation} ${value2}
     Input digit    ${value2}
     Press calculate
 
-Verify that answer is ${answer}
+Verify that the answer is ${answer}
     ${value}    Get Element Attribute    input    value
     Should Be Equal As Integers    ${value}    ${answer}
 
