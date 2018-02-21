@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation     Tests to verify simple calculations with Web 2.0 Calculator
 Test Setup        Open calulator and clear
 Test Teardown     Close all browsers
 Library           Selenium2Library
@@ -52,5 +53,4 @@ Input digit
     [Arguments]    ${integer}
     @{digits}    Value to digits    ${integer}
     : FOR    ${digit}    IN    @{digits}
-    \    Log    ${digit}
     \    Press ${digit}
