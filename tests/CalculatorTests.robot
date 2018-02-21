@@ -2,13 +2,14 @@
 Test Setup        Open calulator and clear
 Test Teardown     Close all browsers
 Library           Selenium2Library
+Library           calclib.py
 
 *** Variables ***
 ${URL}            https://web2.0calc.com/
 ${BROWSER}        ff
-&{buttons}        1=Btn1    2=Btn2    3=Btn3    4=Btn4    5=Btn5    6=Btn6    7=Btn7
-...               8=Btn8    9=Btn9    plus=BtnPlus    minus=BtnMinus    times=BtnMult    divided_by=BtnDiv    clear=BtnClear
-...               calculate=BtnCalc
+&{buttons}        0=Btn0    1=Btn1    2=Btn2    3=Btn3    4=Btn4    5=Btn5    6=Btn6
+...               7=Btn7    8=Btn8    9=Btn9    plus=BtnPlus    minus=BtnMinus    times=BtnMult    divided_by=BtnDiv
+...               clear=BtnClear    calculate=BtnCalc
 
 *** Test Cases ***
 Addition
@@ -38,11 +39,18 @@ Press ${button}
     Click Button    &{buttons}[${button}]
 
 Calculate ${value1} ${operation} ${value2}
-    Press ${value1}
+    Input digit    ${value1}
     Press ${operation}
-    Press ${value2}
+    Input digit    ${value2}
     Press calculate
 
 Verify that answer is ${answer}
     ${value}    Get Element Attribute    input    value
     Should Be Equal As Integers    ${value}    ${answer}
+
+Input digit
+    [Arguments]    ${integer}
+    @{digits}    Value to digits    ${integer}
+    : FOR    ${digit}    IN    @{digits}
+    \    Log    ${digit}
+    \    Press ${digit}
