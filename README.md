@@ -17,6 +17,7 @@ This is the first set of regression tests.
    More tests can be easily added.
    
 ## Possible next steps
+  * More accurate error messages
   * Data driven tests with random inputs 
   * More complex tests with multiple operations
   * More operations
