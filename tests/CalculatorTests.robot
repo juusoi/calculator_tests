@@ -40,6 +40,11 @@ Press ${button}
     Click Button    &{buttons}[${button}]
 
 Calculate ${value1} ${operation} ${value2}
+    [Documentation]    ${value1}, ${value2} are integers
+    ...
+    ...    ${operation} can be plus, minus, times, divide_by, clear or calculate
+    ...
+    ...    Values are converted to single digits
     Input digit    ${value1}
     Press ${operation}
     Input digit    ${value2}
